@@ -16,11 +16,31 @@ pair<int,int> findPair(int arr[],int n,int target){
     return p;
 }
 
+void findOpt(int arr[],int n,int target){
+
+    // optimized
+    int i=0;
+    int j=n-1;
+    while(i < j){
+        int sum=arr[i]+arr[j];
+        if(sum == target){
+            cout<<i<<" "<<j<<endl;
+            break;
+        }
+        else if(sum > target){
+            j--;
+        }else{
+            i++;
+        }
+    }
+}
+
 int main(){
     int arr[]={2,7,11,15};
     int n=4;
     int target=9;
 
-    pair<int,int>ans=findPair(arr,n,target);
-    cout<<ans.first<<" "<<ans.second<<endl;
+    // pair<int,int>ans=findPair(arr,n,target);
+    // cout<<ans.first<<" "<<ans.second<<endl;
+    findOpt(arr,n,target);
 }
