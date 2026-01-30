@@ -19,9 +19,21 @@ void findHCF(int a, int b) {
     }
     cout << max_ans << " ";
 }
+void eucliHCF(int a,int b){
+    int j=min(a,b);
+    int hcf=1;
+    for(int i=j;i>=1;i--){
+        if(a%i == 0 && b%i==0){
+            hcf=i;
+            break;
+        }
+    }
+    cout<<hcf<<endl;
+}
 
 int main(){
     int a=4;
     int b=8;
-    findHCF(a,b);
+    // findHCF(a,b);
+    eucliHCF(a,b);
 }
