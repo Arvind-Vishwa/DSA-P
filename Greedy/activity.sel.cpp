@@ -8,22 +8,23 @@ bool comp(const auto&a,const auto&b){
 
 void findActivity(vector<int>&start,vector<int>&finish){
     vector<pair<int,int>>temp;
-
-    for(int i=0;i<start.size();i++){
+    int s=start.size();
+    for(int i=0;i<s;i++){
         temp.push_back({start[i],finish[i]});
     }
 
     sort(temp.begin(),temp.end(),[](auto&a,auto&b){
         return a.second < b.second;
     });
-
+    int n=temp.size();
     int curr_time=temp[0].second;
     int cnt=1;
-    for(int i=1;i<temp.size();i++){
+    for(int i=1;i<n;i++){
         if(temp[i].first > curr_time){
             cnt++;
+            curr_time=temp[i].second;
         }
-        curr_time=temp[i-1].second;
+        
     }
 
     cout<<"ans :"<<cnt;
