@@ -13,6 +13,8 @@ void printFibo(int n){
         arr[i]=sum;
         cout<<sum<<" ";
     }
+    cout<<endl;
+    cout<<n<<"th :"<<sum;
     
 }
 
