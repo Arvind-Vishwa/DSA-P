@@ -60,6 +60,6 @@ void findPostfix(string s){
 }
 
 int main(){
-    string s="a*(b+c)/d";
+    string s="h^m^q^(7-4)";
     findPostfix(s);
 }
