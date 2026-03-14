@@ -94,5 +94,10 @@ class CircularQueue{
 
 
 int main(){
-
+    CircularQueue cq(5);
+    cq.push(10);
+    cq.push(20);
+    cq.push(30);
+    cout<<cq.getFront()<<endl;
+    cout<<cq.getRear()<<endl;
 }
