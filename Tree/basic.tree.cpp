@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 
 class Node{
@@ -12,7 +13,7 @@ class Node{
         this->left=NULL;
         right=NULL;
     }
-     
+    
     
 };
 
@@ -70,6 +71,7 @@ void inOrderTraversal(Node* root){
 }
 
 void postOrderTraversal(Node* root){
+    
     if(root == NULL)
     return;
 
@@ -82,6 +84,39 @@ void postOrderTraversal(Node* root){
 
     // N ->Node
     cout<<root->data<<" ";
+}
+
+void levelOrderTraversal(Node* root){
+    queue<Node*>q;
+
+    // initial state maintain
+    q.push(root);
+    q.push(NULL);
+
+    while(!q.empty()){
+        Node* front=q.front();
+        q.pop();
+        if(front == NULL){
+            // lvl complete hogya
+            cout<<endl;
+
+            if(!q.empty()){
+                q.push(NULL);
+            }
+        }else{
+
+        // fir tum print karlo
+        cout<<front->data<<endl;
+
+        // is child queue mein daaldo
+        if(front->left != NULL){
+            q.push(front->left);
+        }
+        if(front->right != NULL){
+            q.push(front->right);
+        }
+    }
+    }
 }
 
 int main(){
