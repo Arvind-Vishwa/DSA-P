@@ -62,6 +62,26 @@ void insertAtHead(int val,Node* &head,Node* &tail){
 //     return len;
 // }
 
+bool Search(int val,Node* &head){
+    Node* temp=head;
+    while(temp != NULL){
+        if(temp->data == val){
+            return true;
+        }
+        temp=temp->next;
+    }
+    return false;
+}
+
+void reverseLL(Node* &head,Node* &tail){
+    Node* temp=tail;
+    while(temp != NULL){
+        cout<<temp->data<<" ";
+        temp=temp->prev;
+    }
+    cout<<endl;
+}
+
 void print(Node* &head){
     Node* temp=head;
     while(temp != NULL){
@@ -80,7 +100,16 @@ int main(){
     insertAtHead(30,head,tail);
     insertAtHead(40,head,tail);
     print(head);
-    insertATPos(88,3,head);
-    print(head);
+    // insertATPos(88,3,head);
+    // print(head);
+
+    // bool ans=Search(20,head);
+    // if(ans == true){
+    //     cout<<"Founded"<<endl;
+    // }else{
+    //     cout<<"Not found"<<endl;
+    // }
+    // reverseLL(head,tail);
+    
     
 }

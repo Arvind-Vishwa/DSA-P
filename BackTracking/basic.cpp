@@ -1,0 +1,4 @@
+/*
+It explore all the possible ways
+
+*/

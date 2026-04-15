@@ -4,6 +4,7 @@ using namespace std;
 
 void findTriplet(int arr[],int n,int target){
     // two pointer
+    
     sort(arr,arr+n);
     vector<int>ans;
     for(int i=0;i<n-1;i++){

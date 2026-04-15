@@ -19,6 +19,7 @@ pair<int,int> findPair(int arr[],int n,int target){
 void findOpt(int arr[],int n,int target){
 
     // optimized
+
     int i=0;
     int j=n-1;
     while(i < j){

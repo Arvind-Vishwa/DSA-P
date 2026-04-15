@@ -26,6 +26,6 @@ void findMax(int arr[],int n,int k){
 int main(){
     int arr[]={100,200,300,400};
     int n=4;
-    int k=2;
+    int k=2; 
     findMax(arr,n,k);
 }

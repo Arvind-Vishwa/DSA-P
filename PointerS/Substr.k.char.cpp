@@ -17,7 +17,7 @@ void findDist(string s,int k){
 }
 
 int main(){
-    string s="aa";
+    string s="aaa";
     int k=1;
     findDist(s,k);
 }

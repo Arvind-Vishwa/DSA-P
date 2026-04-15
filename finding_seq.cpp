@@ -1,27 +1,50 @@
-// finding sequence
-#include<bits/stdc++.h>
+// operator --> { /, * , + , - }
+// prime no  --> n (user)
+
+#include<iostream>
+#include<vector>
 using namespace std;
 
-int findSeq(vector<int>arr){
-    // sort
-    sort(arr.begin(),arr.end());
-    int count=1;
-    int maxLen=1;
-    for(int i=1;i<arr.size();i++){
-        
-        if(arr[i] == arr[i-1]) continue;
-        if(arr[i] == arr[i-1]+1){
-            count++;
-        }else{
-            count=1;
+void findOpr(vector<int>prime,char opr[],int n){
+    
+    int size=prime.size();
+    for(int i=0;i<size;i++){
+
+        cout<<prime[i]<<" ";
+        char ch=opr[i%n];
+        if(i < prime.size()-1){
+            cout<<ch<<" ";
         }
-        maxLen=max(maxLen,count);
+        
     }
-    return maxLen;
+
+    
+}
+
+vector<int> findPrime(int n){
+    vector<int>prime;
+
+    for(int i=1;i<=n;i++){
+        int cnt=0;
+        for(int j=1;j<=i;j++){
+            if(i%j == 0){
+                cnt++;
+            }
+        }
+        if(cnt == 2){
+            prime.push_back(i);
+        }
+    }
+    return prime;
 }
 
 int main(){
-    vector<int>arr={100,4,200,1,3,2};
-    int cnt=findSeq(arr);
-    cout<<"ans :"<<cnt;
+    char opr[]={ '/' ,'*','+','-'};
+    int size=4;
+    cout<<"Enter the num :";
+    int n;
+    cin>>n;
+
+    vector<int>ans = findPrime(n);
+    findOpr(ans,opr,size);
 }

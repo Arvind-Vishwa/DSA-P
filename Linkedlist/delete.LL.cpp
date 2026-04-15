@@ -27,7 +27,7 @@ Node* insertATtail(Node* &head,Node* &tail,int val){
     return head;
 }
 
-Node* deleteLL(Node* &head,Node* &tail,int pos){
+Node* deleteLL(Node* &head,int pos){
     Node* curr=head;
     if(pos == 1){
         // first node
@@ -57,7 +57,7 @@ int main(){
     head=insertATtail(head,tail,30);
     head=insertATtail(head,tail,40);
 
-    head=deleteLL(head,tail,1);
+    head=deleteLL(head,1);
 
     Node* temp=head;
     while(temp != NULL){

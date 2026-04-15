@@ -1,5 +1,6 @@
 // Double LL insert at tail
 #include<iostream>
+
 using namespace std;
 
 class Node{
@@ -50,3 +51,4 @@ int main(){
     insertAtTail(40,head,tail);
     print(head);
 }
+

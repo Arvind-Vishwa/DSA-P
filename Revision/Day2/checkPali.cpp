@@ -5,6 +5,7 @@ using namespace std;
 void checkPali(int num){
     int ans=0;
     int temp=num;
+    
     while(num > 0){
         int no=num%10;
         ans=(ans*10)+no;

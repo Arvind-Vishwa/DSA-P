@@ -14,6 +14,9 @@ int main(){
     // front
     cout<<"front: "<<q.front()<<endl;  // 10
 
+    // rear
+    cout<<"rear: "<<q.back()<<endl;  // 40
+
     // pop
     q.pop();   // 10
 

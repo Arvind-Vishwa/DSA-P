@@ -51,6 +51,22 @@ Node* insertAtTail(int value,Node* &head,Node* &tail){
     }
     return head;
 }
+// insert at pos
+Node* insertAtPos(int val,int pos,Node* &head){
+    // traverse krna hoga
+    Node* temp=head;
+    Node* curr=temp->next;
+    for(int i=1;i<pos-1;i++){
+        temp=temp->next;
+        
+    }
+    // create a Node
+    Node* newNode=new Node(val);
+    newNode->next=temp->next;
+    temp->next=newNode;
+
+    return head;
+}
 void print(Node* head){
     Node* temp=head;
 
@@ -78,6 +94,9 @@ print(head);
 head=insertAtTail(30,head,tail);
 print(head);
 head=insertAtTail(40,head,tail);
+print(head);
+
+head=insertAtPos(88,3,head);
 print(head);
 
 

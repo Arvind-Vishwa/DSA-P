@@ -6,7 +6,7 @@ void printSum(int arr[],int num){
     arr[1]=1;
     int sum=1;
     for(int i=2;i<num;i++){
-        int no=arr[i-1]+arr[i-1];
+        int no=arr[i-1]+arr[i-2];
         arr[i]=no;
         // cout<<"no "<<no<<endl;
         sum +=arr[i];
