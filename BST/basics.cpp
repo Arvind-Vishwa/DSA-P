@@ -69,6 +69,7 @@ void inorderTraversal(Node* root){
 }
 
 void postorderTraversal(Node* root){
+
     if(root == NULL)
     return;
 
@@ -77,6 +78,55 @@ void postorderTraversal(Node* root){
     postorderTraversal(root->right);
     cout<<root->data<<" ";
 }
+
+int getMin(Node* root){
+    
+    if(root == NULL)
+    return -1;
+
+    while(root->left != NULL){
+        root=root->left;
+    }
+
+    // ab root ek dum extreme pr h
+    return root->data;
+    
+}
+
+int getMax(Node* root){
+    if(root == NULL)
+    return -1;
+
+    while (root ->right != NULL)
+    {
+        root=root->right;
+    }
+
+    return root->data;
+    
+}
+
+bool searchBST(Node* root,int target){
+    if(root == NULL)
+    return false;
+
+    if(root->data ==  target){
+        return true;
+    }else{
+        if(target < root->data){
+            bool leftAns=searchBST(root->left,target);
+            if(leftAns == true)
+            return true;
+        }else{
+
+            bool rightAns=searchBST(root->right,target);
+            if(rightAns == true)
+            return true;
+        }
+    }
+    return false;
+}
+
 // print node
 // level order
 void levelOrder(Node* root){
@@ -112,4 +162,15 @@ levelOrder(root);
 
 cout<<endl<<"inorder";  // inorder traversal is always sorted
 inorderTraversal(root);
+
+int min=getMin(root);
+cout<<endl;
+cout<<"min: "<<min<<endl;
+
+int max=getMax(root);
+cout<<"max :"<<max<<endl;
+
+bool ans=searchBST(root,200);
+cout<<ans<<endl;
+
 }
